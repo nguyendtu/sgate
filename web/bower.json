@@ -1,0 +1,23 @@
+{
+  "name": "sungate",
+  "homepage": "https://github.com/nguyendtu/VietvietTravel",
+  "authors": [
+    "Duy Tu <duytu.nguyen@outlook.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor/bower",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "https://github.com/nguyendtu/bootstrap.git#sgate"
+  }
+}

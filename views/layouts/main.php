@@ -55,7 +55,7 @@ AppAsset::register($this);
                         [
                             'label' => 'Hàng hóa thực',
                             'items' => [
-                                ['label' => 'Danh mục hàng hóa', 'url' => ['/site/contact']],
+                                ['label' => 'Danh mục hàng hóa', 'url' => ['hanghoathuc/index']],
                                 ['label' => 'Phiếu mua hàng', 'url' => ['/']],
                                 ['label' => 'Phiếu bán hàng', 'url' => ['/']],
                             ],

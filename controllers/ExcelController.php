@@ -9,6 +9,7 @@
 namespace app\controllers;
 
 use app\models\Hanghoa;
+use app\models\Hanghoathuc;
 use yii\web\Controller;
 
 class ExcelController extends Controller{
@@ -45,7 +46,22 @@ class ExcelController extends Controller{
 
                 return $this->redirect([ $model .'/index']);
             }else{
+                foreach($data as $item){
+                    $newModel = new Hanghoathuc();
 
+                    /**------------- set data ----------------*/
+                    $newModel->TenMatHang       = $item['Tên Mặt Hàng'];
+                    $newModel->MaLoaiHangHoa    = $item['Mã Loại Hàng Hóa'];
+                    $newModel->DonVi            = $item['Đơn Vị'];
+                    $newModel->SoLuong          = $item['Số Lượng'];
+                    $newModel->GiaMua           = $item['Giá Mua'];
+                    $newModel->GiaBan           = $item['Giá Bán'];
+                    /**------------- end set data -------------*/
+
+                    $newModel->save();
+                }
+
+                return $this->redirect([ $model .'/index']);
             }
         }else {
             return $this->render('error');

@@ -58,4 +58,8 @@ class Nhapkho extends \yii\db\ActiveRecord
             'GhiChu' => 'Ghi Chu',
         ];
     }
+
+    public function getNhanVien(){
+        return $this->hasOne(Nhanvien::className(), ['id' => 'NhanVienMuaHang']);
+    }
 }

@@ -43,26 +43,26 @@ AppAsset::register($this);
                     'options' => ['class' => 'nav nav-stacked nav-pills'],
                     'dropDownCaret' => '',
                     'items' => [
-                        ['label' => 'Loại hàng hóa', 'url' => ['/site/index']],
+                        ['label' => 'Loại hàng hóa', 'url' => ['hanghoa/index']],
                         [
                             'label' => 'Hàng hóa',
                             'items' => [
                                 ['label' => 'Danh mục hàng hóa', 'url' => ['hanghoa/index']],
                                 ['label' => 'Phiếu nhập kho', 'url' => ['nhapkho/index']],
-                                ['label' => 'Phiếu xuất kho', 'url' => ['site/contact']],
+                                ['label' => 'Phiếu xuất kho', 'url' => ['xuatkho/index']],
                             ],
                         ],
                         [
                             'label' => 'Hàng hóa thực',
                             'items' => [
                                 ['label' => 'Danh mục hàng hóa', 'url' => ['hanghoathuc/index']],
-                                ['label' => 'Phiếu mua hàng', 'url' => ['/']],
-                                ['label' => 'Phiếu bán hàng', 'url' => ['/']],
+                                ['label' => 'Phiếu mua hàng', 'url' => ['phieumuahang/index']],
+                                ['label' => 'Phiếu bán hàng', 'url' => ['phieubanhang/index']],
                             ],
                         ],
-                        ['label' => 'Nhà cung cấp', 'url' => ['/site/contact']],
-                        ['label' => 'Khách hàng', 'url' => ['/']],
-                        ['label' => 'Nhân viên', 'url' => ['/']],
+                        ['label' => 'Nhà cung cấp', 'url' => ['nhacungcap/index']],
+                        ['label' => 'Khách hàng', 'url' => ['khachhang/index']],
+                        ['label' => 'Nhân viên', 'url' => ['nhanvien/index']],
                         ['label' => 'Tài khoản', 'url' => ['/']],
                         Yii::$app->user->isGuest ? (
                         ['label' => 'Login', 'url' => ['/site/login']]

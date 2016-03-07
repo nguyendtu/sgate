@@ -58,4 +58,8 @@ class Nhanvien extends \yii\db\ActiveRecord
             'HinhDaiDien' => 'Hinh Dai Dien',
         ];
     }
+
+    public function getNhapKhos(){
+        return $this->hasMany(Nhapkho::className(), ['MaNhanVienMuaHang' => 'id']);
+    }
 }

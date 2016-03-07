@@ -10,9 +10,9 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * NhakhoController implements the CRUD actions for Nhapkho model.
+ * NhapkhoController implements the CRUD actions for Nhapkho model.
  */
-class NhakhoController extends Controller
+class NhapkhoController extends Controller
 {
     public function behaviors()
     {

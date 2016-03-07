@@ -48,7 +48,7 @@ AppAsset::register($this);
                             'label' => 'Hàng hóa',
                             'items' => [
                                 ['label' => 'Danh mục hàng hóa', 'url' => ['hanghoa/index']],
-                                ['label' => 'Phiếu nhập kho', 'url' => ['site/contact']],
+                                ['label' => 'Phiếu nhập kho', 'url' => ['nhapkho/index']],
                                 ['label' => 'Phiếu xuất kho', 'url' => ['site/contact']],
                             ],
                         ],

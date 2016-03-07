@@ -4,19 +4,19 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
-/* @var $searchModel app\models\NhapkhoSearch */
+/* @var $searchModel app\models\ChitietnhapkhoSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Nhapkhos';
+$this->title = 'Chitietnhapkhos';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="nhapkho-index">
+<div class="chitietnhapkho-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Nhapkho', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Create Chitietnhapkho', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([
@@ -25,15 +25,11 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            // 'ID',
-            'NgayNhap',
-            'NhanVienMuaHang',
-            'SoHoaDon',
-            'MaNhaCungCap',
-            'TongTienHang',
-            'ThueVAT',
-            'TongTienTT',
-            'GhiChu',
+            'ID',
+            'MaNhapKho',
+            'MaHangHoa',
+            'SoLuong',
+            'DonGia',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

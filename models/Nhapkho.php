@@ -48,18 +48,22 @@ class Nhapkho extends \yii\db\ActiveRecord
     {
         return [
             'ID' => 'ID',
-            'NgayNhap' => 'Ngay Nhap',
-            'NhanVienMuaHang' => 'Nhan Vien Mua Hang',
-            'SoHoaDon' => 'So Hoa Don',
-            'MaNhaCungCap' => 'Ma Nha Cung Cap',
-            'TongTienHang' => 'Tong Tien Hang',
-            'ThueVAT' => 'Thue Vat',
-            'TongTienTT' => 'Tong Tien Tt',
-            'GhiChu' => 'Ghi Chu',
+            'NgayNhap' => 'Ngày Nhập',
+            'NhanVienMuaHang' => 'Nhân Viên Mua Hàng',
+            'SoHoaDon' => 'Số Hóa Đơn',
+            'MaNhaCungCap' => 'Mã Nhà Cung Cấp',
+            'TongTienHang' => 'Tổng Tiền Hàng',
+            'ThueVAT' => 'Thuế VAT',
+            'TongTienTT' => 'Tổng Tiền TT',
+            'GhiChu' => 'Ghi Chú',
         ];
     }
 
-    public function getNhanVien(){
+    public function getNhanvien(){
         return $this->hasOne(Nhanvien::className(), ['id' => 'NhanVienMuaHang']);
+    }
+
+    public function getNhacungcap(){
+        return $this->hasOne(Nhacungcap::className(), ['id' => 'MaNhaCungCap']);
     }
 }

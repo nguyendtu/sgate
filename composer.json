@@ -25,7 +25,8 @@
         "yiisoft/yii2-debug": "*",
         "yiisoft/yii2-gii": "*",
         "yiisoft/yii2-faker": "*",
-        "moonlandsoft/yii2-phpexcel": "*"
+        "moonlandsoft/yii2-phpexcel": "*",
+        "himiklab/yii2-handsontable-widget" : "*"
     },
     "config": {
         "process-timeout": 1800

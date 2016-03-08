@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\models\Chitietnhapkho;
 use Yii;
 use app\models\Nhapkho;
 use app\models\NhapkhoSearch;
@@ -61,12 +62,14 @@ class NhapkhoController extends Controller
     public function actionCreate()
     {
         $model = new Nhapkho();
+        $modelChiTietNhapKho = new Chitietnhapkho();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->ID]);
         } else {
             return $this->render('create', [
                 'model' => $model,
+                'modelChiTietNhapKho' => $modelChiTietNhapKho,
             ]);
         }
     }

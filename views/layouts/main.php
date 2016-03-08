@@ -43,7 +43,7 @@ AppAsset::register($this);
                     'options' => ['class' => 'nav nav-stacked nav-pills'],
                     'dropDownCaret' => '',
                     'items' => [
-                        ['label' => 'Loại hàng hóa', 'url' => ['hanghoa/index']],
+                        ['label' => 'Loại hàng hóa', 'url' => ['loaihanghoa/index']],
                         [
                             'label' => 'Hàng hóa',
                             'items' => [

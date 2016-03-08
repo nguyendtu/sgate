@@ -58,4 +58,8 @@ class Nhacungcap extends \yii\db\ActiveRecord
             'NoHienTai' => 'No Hien Tai',
         ];
     }
+
+    public function getNhapkhos(){
+        return $this->hasMany(Nhapkho::className(), ['MaNhaCungCap' => 'id']);
+    }
 }

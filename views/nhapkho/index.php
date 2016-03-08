@@ -30,10 +30,15 @@ $this->params['breadcrumbs'][] = $this->title;
             // 'NhanVienMuaHang',
             [
                 'attribute' => 'NhanVienMuaHang',
-                'value' => 'nhanvien.name'
+                'value' => 'nhanvien.TenNhanVien'
             ],
             'SoHoaDon',
-            'MaNhaCungCap',
+            // 'MaNhaCungCap',
+            [
+                'attribute' => 'MaNhaCungCap',
+                'label' => 'Nhà Cung Cấp',
+                'value' => 'nhacungcap.TenCongTy'
+            ],
             'TongTienHang',
             'ThueVAT',
             'TongTienTT',

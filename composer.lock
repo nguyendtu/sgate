@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c1094787a26194c621f5c8d46ae68591",
-    "content-hash": "0fb98dbd70402be9c6e3eee2ca98105d",
+    "hash": "fb8ef1ec053d66515f471979e42b097c",
+    "content-hash": "553dfeb504ed05b1a3a22cf26cc15feb",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -647,6 +647,134 @@
     ],
     "packages-dev": [
         {
+            "name": "bower-asset/handsontable",
+            "version": "0.23.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/handsontable/handsontable.git",
+                "reference": "cb4ae1651e3b456d85e0ac1767e69d72267e266c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/handsontable/handsontable/zipball/cb4ae1651e3b456d85e0ac1767e69d72267e266c",
+                "reference": "cb4ae1651e3b456d85e0ac1767e69d72267e266c",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/moment": ">=2.9.0,<3.0.0",
+                "bower-asset/pikaday": ">=1.3.2,<2.0.0",
+                "bower-asset/zeroclipboard": ">=2.2.0,<3.0.0"
+            },
+            "require-dev": {
+                "bower-asset/chroma-js": "~0.5.6"
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": [
+                    "./dist/handsontable.js",
+                    "./dist/handsontable.css"
+                ],
+                "bower-asset-ignore": [
+                    "**/.*",
+                    "components",
+                    "demo",
+                    "node_modules",
+                    "src",
+                    "test"
+                ]
+            },
+            "description": "Spreadsheet-like data grid editor that provides copy/paste functionality compatible with Excel/Google Docs",
+            "keywords": [
+                "data",
+                "data-grid",
+                "data-spreadsheet",
+                "data-table",
+                "edit-cell",
+                "editable-table",
+                "editor",
+                "excel",
+                "grid",
+                "grid-editor",
+                "spreadsheet",
+                "table",
+                "tabular-data"
+            ]
+        },
+        {
+            "name": "bower-asset/moment",
+            "version": "2.12.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/moment/moment.git",
+                "reference": "b135bf1a6d58ff94287f0a21455bfa6a1ddc7226"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/moment/moment/zipball/b135bf1a6d58ff94287f0a21455bfa6a1ddc7226",
+                "reference": "b135bf1a6d58ff94287f0a21455bfa6a1ddc7226",
+                "shasum": ""
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": "moment.js",
+                "bower-asset-ignore": [
+                    "**/.*",
+                    "benchmarks",
+                    "bower_components",
+                    "meteor",
+                    "node_modules",
+                    "scripts",
+                    "tasks",
+                    "test",
+                    "component.json",
+                    "composer.json",
+                    "CONTRIBUTING.md",
+                    "ender.js",
+                    "Gruntfile.js",
+                    "Moment.js.nuspec",
+                    "package.js",
+                    "package.json"
+                ]
+            }
+        },
+        {
+            "name": "bower-asset/pikaday",
+            "version": "1.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dbushell/Pikaday.git",
+                "reference": "651842140ee0f872f3364c33a34e2b595fd72d43"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dbushell/Pikaday/zipball/651842140ee0f872f3364c33a34e2b595fd72d43",
+                "reference": "651842140ee0f872f3364c33a34e2b595fd72d43",
+                "shasum": ""
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": [
+                    "./pikaday.js",
+                    "./css/pikaday.css"
+                ],
+                "bower-asset-ignore": [
+                    "**/.*",
+                    "node_modules",
+                    "components"
+                ]
+            },
+            "license": [
+                "BSD",
+                "MIT"
+            ],
+            "description": "A refreshing JavaScript Datepicker — lightweight, no dependencies, modular CSS",
+            "keywords": [
+                "calendar",
+                "date",
+                "datepicker"
+            ]
+        },
+        {
             "name": "bower-asset/typeahead.js",
             "version": "v0.10.5",
             "source": {
@@ -672,6 +800,48 @@
             "extra": {
                 "bower-asset-main": "dist/typeahead.bundle.js"
             }
+        },
+        {
+            "name": "bower-asset/zeroclipboard",
+            "version": "v2.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zeroclipboard/zeroclipboard.git",
+                "reference": "039fb799c916d3730fbc898c2f5ef24581c7e9b7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zeroclipboard/zeroclipboard/zipball/039fb799c916d3730fbc898c2f5ef24581c7e9b7",
+                "reference": "039fb799c916d3730fbc898c2f5ef24581c7e9b7",
+                "shasum": ""
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": [
+                    "dist/ZeroClipboard.js",
+                    "dist/ZeroClipboard.swf"
+                ],
+                "bower-asset-ignore": [
+                    "*",
+                    "/dist/.jshintrc",
+                    "!/bower.json",
+                    "!/dist/**"
+                ]
+            },
+            "license": [
+                "https://github.com/zeroclipboard/zeroclipboard/blob/master/LICENSE"
+            ],
+            "description": "The ZeroClipboard library provides an easy way to copy text to the clipboard using an invisible Adobe Flash movie and a JavaScript interface.",
+            "keywords": [
+                "clip",
+                "clipboard",
+                "clippy",
+                "copy",
+                "cut",
+                "flash",
+                "paste",
+                "zclip"
+            ]
         },
         {
             "name": "fzaninotto/faker",
@@ -724,6 +894,49 @@
                 "fixtures"
             ],
             "time": "2015-05-29 06:29:14"
+        },
+        {
+            "name": "himiklab/yii2-handsontable-widget",
+            "version": "1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/himiklab/yii2-handsontable-widget.git",
+                "reference": "c220ca2c13a21d68971fe62d23d71f1804630c97"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/himiklab/yii2-handsontable-widget/zipball/c220ca2c13a21d68971fe62d23d71f1804630c97",
+                "reference": "c220ca2c13a21d68971fe62d23d71f1804630c97",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/handsontable": "*",
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "himiklab\\handsontable\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "HimikLab",
+                    "homepage": "https://github.com/himiklab/"
+                }
+            ],
+            "description": "A minimalist Excel-like grid widget for Yii2",
+            "keywords": [
+                "grid",
+                "handsontable",
+                "widget",
+                "yii2"
+            ],
+            "time": "2016-02-02 08:36:23"
         },
         {
             "name": "moonlandsoft/yii2-phpexcel",

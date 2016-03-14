@@ -34,7 +34,7 @@ class Nhapkho extends \yii\db\ActiveRecord
     {
         return [
             [['NgayNhap', 'NhanVienMuaHang', 'SoHoaDon', 'MaNhaCungCap', 'TongTienHang', 'ThueVAT', 'TongTienTT', 'GhiChu'], 'required'],
-            [['NgayNhap'], 'safe'],
+            //[['NgayNhap'], 'safe'],
             [['NhanVienMuaHang', 'MaNhaCungCap', 'TongTienHang', 'ThueVAT', 'TongTienTT'], 'integer'],
             [['SoHoaDon'], 'string', 'max' => 255],
             [['GhiChu'], 'string', 'max' => 1024]
@@ -60,10 +60,14 @@ class Nhapkho extends \yii\db\ActiveRecord
     }
 
     public function getNhanvien(){
-        return $this->hasOne(Nhanvien::className(), ['id' => 'NhanVienMuaHang']);
+        return $this->hasOne(Nhanvien::className(), ['ID' => 'NhanVienMuaHang']);
     }
 
     public function getNhacungcap(){
-        return $this->hasOne(Nhacungcap::className(), ['id' => 'MaNhaCungCap']);
+        return $this->hasOne(Nhacungcap::className(), ['ID' => 'MaNhaCungCap']);
+    }
+
+    public function getChitietnhapkhos(){
+        return $this->hasMany(Chitietnhapkho::className(), ['MaNhapKho' => 'ID']);
     }
 }

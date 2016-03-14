@@ -19,8 +19,11 @@ class AppAsset extends AssetBundle
     public $baseUrl = '@web';
     public $css = [
         'css/site.css',
+        'handsontable-master/dist/handsontable.full.css',
     ];
     public $js = [
+        'handsontable-master/dist/handsontable.full.js',
+        'js/create.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',

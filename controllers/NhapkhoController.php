@@ -3,9 +3,11 @@
 namespace app\controllers;
 
 use app\models\Chitietnhapkho;
+use app\models\Hanghoa;
 use Yii;
 use app\models\Nhapkho;
 use app\models\NhapkhoSearch;
+use yii\helpers\ArrayHelper;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -62,14 +64,35 @@ class NhapkhoController extends Controller
     public function actionCreate()
     {
         $model = new Nhapkho();
-        $modelChiTietNhapKho = new Chitietnhapkho();
+
+        $hangHoa = ArrayHelper::map(Hanghoa::find()->all(), 'TenMatHang', 'ID');
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            $data = explode(',', Yii::$app->request->post('chi-tiet-nhap-kho'));
+            $modelChiTietNhapKho = new Chitietnhapkho();
+
+            for($i = 0; $i < count($data);){
+                $modelChiTietNhapKho->MaNhapKho = $model->ID;
+                if(!empty($data[$i])) {
+                    $modelChiTietNhapKho->MaHangHoa = $hangHoa[$data[$i++]];
+                    $hh = Hanghoa::find()->where(['id' => $modelChiTietNhapKho->MaHangHoa])->one();
+                }
+                $modelChiTietNhapKho->SoLuong = $data[$i++];
+                $hh->TonKhoHienTai += $modelChiTietNhapKho;
+                if(!empty($data[$i])) {
+                    $modelChiTietNhapKho->DonGia = $data[$i++];
+                }
+                if($modelChiTietNhapKho->save()){
+                    $hh->save();
+                }
+                $modelChiTietNhapKho = new Chitietnhapkho();
+            }
+
+
             return $this->redirect(['view', 'id' => $model->ID]);
         } else {
             return $this->render('create', [
                 'model' => $model,
-                'modelChiTietNhapKho' => $modelChiTietNhapKho,
             ]);
         }
     }
@@ -84,7 +107,26 @@ class NhapkhoController extends Controller
     {
         $model = $this->findModel($id);
 
+        $hangHoa = ArrayHelper::map(Hanghoa::find()->all(), 'TenMatHang', 'ID');
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            $data = explode(',', Yii::$app->request->post('chi-tiet-nhap-kho'));
+            $modelChiTietNhapKho = new Chitietnhapkho();
+            for($i = 0; $i < count($data);){
+                $modelChiTietNhapKho->MaNhapKho = $model->ID;
+                if(!empty($data[$i])) {
+                    $modelChiTietNhapKho->MaHangHoa = $hangHoa[$data[$i++]];
+                    $hh = Hanghoa::find()->where(['id' => $modelChiTietNhapKho->MaHangHoa])->one();
+                }
+                $modelChiTietNhapKho->SoLuong = $data[$i++];
+                $hh->TonKhoHienTai += $modelChiTietNhapKho;
+                if(!empty($data[$i])) {
+                    $modelChiTietNhapKho->DonGia = $data[$i++];
+                }
+                if($modelChiTietNhapKho->save()){
+                    $hh->save();
+                }
+                $modelChiTietNhapKho = new Chitietnhapkho();
+            }
             return $this->redirect(['view', 'id' => $model->ID]);
         } else {
             return $this->render('update', [

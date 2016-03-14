@@ -103,6 +103,19 @@ class HanghoathucController extends Controller
         return $this->redirect(['index']);
     }
 
+    public function actionThongke()
+    {
+        $searchModel = new HanghoathucSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        return $this->render('thongke', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
+
+        //return $this->redirect(['index']);
+    }
+
     /**
      * Finds the Hanghoathuc model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.

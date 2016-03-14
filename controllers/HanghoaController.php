@@ -103,6 +103,38 @@ class HanghoaController extends Controller
         return $this->redirect(['index']);
     }
 
+    public function actionThongke()
+    {
+        $searchModel = new HanghoaSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        return $this->render('thongke', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
+
+        //return $this->redirect(['index']);
+    }
+
+    public function actionKethang(){
+        $model = Hanghoa::find()->where(['NamTaiChinh' => (getDate()['year'] - 1)])->all();
+
+        foreach($model as $hangHoa) {
+            $hangHoaMoi = new Hanghoa();
+            $hangHoaMoi->TenMatHang = $hangHoa->TenMatHang;
+            $hangHoaMoi->MaLoaiHangHoa = $hangHoa->MaLoaiHangHoa;
+            $hangHoaMoi->DonVi = $hangHoa->DonVi;
+            $hangHoaMoi->TonKhoDauKy = $hangHoa->TonKhoHienTai;
+            $hangHoaMoi->TonKhoHienTai = 0;
+            $hangHoaMoi->NamTaiChinh = $hangHoa->NamTaiChinh + 1;
+            $hangHoaMoi->GhiChu = $hangHoa->GhiChu;
+
+            $hangHoaMoi->save();
+        }
+
+        return $this->goHome();
+    }
+
     /**
      * Finds the Hanghoa model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.

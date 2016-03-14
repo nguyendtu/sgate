@@ -5,6 +5,7 @@ namespace app\controllers;
 use Yii;
 use app\models\Chitietnhapkho;
 use app\models\ChitietnhapkhoSearch;
+use yii\helpers\Json;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -60,15 +61,42 @@ class ChitietnhapkhoController extends Controller
      */
     public function actionCreate()
     {
-        $model = new Chitietnhapkho();
+        //$model = new Chitietnhapkho();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if(Yii::$app->request->isAjax){
+            $data = Yii::$app->request->post('data');
+            foreach($data as $item){
+                if($item[0] != ""){
+                    Yii::$app->db->createCommand()->update('chitietnhapkho', [
+                        'MaHangHoa' => $item[1],
+                        'SoLuong' => $item[2],
+                        'DonGIa' => $item[3]], ['ID' => $item[0]])->execute();
+
+                    return Json::encode('update success');
+                }else {
+                    $model = new Chitietnhapkho();
+                    $model->MaNhapKho = 0;
+                    $model->MaHangHoa = 1;
+                    $model->SoLuong = $item[2];
+                    $model->DonGia = $item[3];
+
+                    if($model->save()){
+                        return Json::encode($model);
+                        //return $model->id;
+                    }
+                }
+            }
+
+            //return Json::encode($model);
+        }
+
+        /*if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->ID]);
         } else {
             return $this->render('create', [
                 'model' => $model,
             ]);
-        }
+        }*/
     }
 
     /**

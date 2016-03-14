@@ -47,4 +47,8 @@ class Chitietxuatkho extends \yii\db\ActiveRecord
             'DonGia' => 'Don Gia',
         ];
     }
+
+    public function getHanghoa(){
+        return $this->hasOne(Hanghoa::className(), ['ID' => 'MaHangHoa']);
+    }
 }

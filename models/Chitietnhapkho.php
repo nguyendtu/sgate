@@ -47,4 +47,12 @@ class Chitietnhapkho extends \yii\db\ActiveRecord
             'DonGia' => 'Don Gia',
         ];
     }
+
+    public function getNhapkho(){
+        return $this->hasOne(Nhapkho::className(), ['ID' => 'MaNhapKho']);
+    }
+
+    public function getHanghoa(){
+        return $this->hasOne(Hanghoa::className(), ['ID' => 'MaHangHoa']);
+    }
 }

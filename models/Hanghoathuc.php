@@ -52,4 +52,8 @@ class Hanghoathuc extends \yii\db\ActiveRecord
             'GiaBan' => 'Gia Ban',
         ];
     }
+
+    public function getLoaihanghoa(){
+        return $this->hasOne(Loaihanghoa::className(), ['ID' => 'MaLoaiHangHoa']);
+    }
 }

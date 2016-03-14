@@ -69,6 +69,24 @@ class ExcelController extends Controller{
     }
 
     public function actionExport(){
+        \moonland\phpexcel\Excel::export([
+            'fileName' => 'Hang hoa thuc',
+            'format' => 'Excel2007',
+            'models' => Hanghoathuc::find()->all(),
+            'columns' => [
+                // 'ID',
+                'TenMatHang',
+                [
+                    'attribute' => 'MaLoaiHangHoa',
+                    'value' => 'loaihanghoa.TenLoaiHangHoa',
+                ],
+                'DonVi',
+                'SoLuong',
+                'GiaMua',
+                'GiaBan',
+            ],
+        ]);
 
+        //return $this->goBack();
     }
 }

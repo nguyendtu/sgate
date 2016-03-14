@@ -6,7 +6,7 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model app\models\Nhapkho */
 
-$this->title = $model->ID;
+$this->title = 'Kho ' . $model->ID;
 $this->params['breadcrumbs'][] = ['label' => 'Nhapkhos', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -30,9 +30,15 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             'ID',
             'NgayNhap',
-            'NhanVienMuaHang',
+            [
+                'attribute' => 'NhanVienMuaHang',
+                'value' => $model->nhanvien->TenNhanVien,
+            ],
             'SoHoaDon',
-            'MaNhaCungCap',
+            [
+                'attribute' => 'MaNhaCungCap',
+                'value' => $model->nhacungcap->TenCongTy,
+            ],
             'TongTienHang',
             'ThueVAT',
             'TongTienTT',
@@ -40,4 +46,24 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
     ]) ?>
 
+    <h1>Chi tiết kho</h1>
+    <?= \yii\grid\GridView::widget([
+        'dataProvider' => new \yii\data\ActiveDataProvider([
+            'query' => $model->getChitietnhapkhos(),
+        ]),
+        'columns' => [
+            [
+                'class' => \yii\grid\SerialColumn::className()
+            ],
+            // 'ID',
+            'MaNhapKho',
+            'MaHangHoa',
+            'SoLuong',
+            'DonGia',
+            [
+                'class' => \yii\grid\ActionColumn::className(),
+                'controller' => 'chitietnhapkho',
+            ],
+        ]
+    ]) ?>
 </div>

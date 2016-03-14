@@ -66,4 +66,16 @@ class Hanghoa extends \yii\db\ActiveRecord
 
         return $years;
     }
+
+    public function getChitietnhapkhos(){
+        return $this->hasMany(Chitietnhapkho::className(), ['MaHangHoa' => 'ID']);
+    }
+
+    public function getChitietxuatkhos(){
+        return $this->hasMany(Chitietxuatkho::className(), ['MaHangHoa' => 'ID']);
+    }
+
+    public function getLoaihanghoa(){
+        return $this->hasOne(Loaihanghoa::className(), ['ID' => 'MaloaiHangHoa']);
+    }
 }

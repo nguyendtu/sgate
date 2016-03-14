@@ -43,4 +43,12 @@ class Loaihanghoa extends \yii\db\ActiveRecord
             'GhiChu' => 'Ghi Chu',
         ];
     }
+
+    public function getHanghoas(){
+        return $this->hasMany(Hanghoa::className(), ['MaLoaiHangHoa' => 'ID']);
+    }
+
+    public function getHanghoathucs(){
+        return $this->hasMany(Hanghoathuc::className(), ['MaLoaiHangHoa' => 'ID']);
+    }
 }
